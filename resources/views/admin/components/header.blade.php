@@ -124,10 +124,11 @@
 }
 </style>
 
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/bower_components/bootstrap/css/bootstrap.min.css') }} ">
+  <link rel="stylesheet" type="text/css" href="{{ asset('admin/bower_components/bootstrap/css/bootstrap.min.css') }} ">
 
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/icon/feather/css/feather.css') }} ">
+  <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/icon/feather/css/feather.css') }} ">
 
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/style.css') }} ">
-<link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/jquery.mCustomScrollbar.css') }} ">
+  <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/style.css') }} ">
+  <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/css/jquery.mCustomScrollbar.css') }} ">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

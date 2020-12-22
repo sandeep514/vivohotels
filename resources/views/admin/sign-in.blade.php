@@ -233,8 +233,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
+						@if (Session::has('error'))
+							<div class="toast errorToast">
+								<div class="toast-body">
+									{{ Session::get('error') }}
+								</div>
+							</div>
+					    @endif
 
-					<form class="md-float-material form-material">
+					<form class="md-float-material form-material" method="POST" action="{{ route('admin.login.user') }}">
+						{{ csrf_field() }}
 						<div class="text-center">
 							<img src="{{ asset('admin/assets/images/logo.png') }}" alt="logo.png">
 						</div>
@@ -248,10 +256,20 @@
 								<div class="form-group form-primary">
 									<input type="text" name="email" class="form-control" required="" placeholder="Your Email Address">
 									<span class="form-bar"></span>
+									@if ($errors->has('email'))
+										<span class="error">
+											<strong>{{ $errors->first('email') }}</strong>
+										</span>
+									@endif
 								</div>
 								<div class="form-group form-primary">
 									<input type="password" name="password" class="form-control" required="" placeholder="Password">
 									<span class="form-bar"></span>
+									@if ($errors->has('password'))
+										<span class="error">
+											<strong>{{ $errors->first('password') }}</strong>
+										</span>
+									@endif
 								</div>
 								<div class="row m-t-25 text-left">
 									<div class="col-12">
@@ -269,9 +287,15 @@
 								</div>
 								<div class="row m-t-30">
 									<div class="col-md-12">
-										<button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
+										<button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
 									</div>
 								</div>
+								@if ($errors->has('error'))
+									<span class="error">
+										<strong>{{ $errors->first('error') }}</strong>
+									</span>
+								@endif
+
 								<hr />
 								<div class="row">
 									<div class="col-md-10">
