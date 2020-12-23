@@ -135,53 +135,53 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-body ">
-                                                    <div class="row"> 
-                                                        <label class="col-sm-2 col-form-label">Title</label> 
-                                                        <div class="col-sm-10"> 
-                                                            <div class="form-group"> 
-                                                                <input type="text" name="room[{{ ($key+1) }}][title]" class="form-control" value="{{ $value->title }}"> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                    <div class="row"> 
-                                                        <label class="col-sm-2 col-form-label">No of Double Bed</label> 
-                                                        <div class="col-sm-10"> 
-                                                            <div class="form-group"> 
-                                                                <input type="number" name="room[{{ ($key+1) }}][no_of_double_bedrooms]" value="{{ $value->no_of_double_bedrooms }}" class="form-control"> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                    <div class="row"> 
-                                                        <label class="col-sm-2 col-form-label">No of Single Beds</label> 
-                                                        <div class="col-sm-10"> 
-                                                            <div class="form-group"> 
-                                                                <input type="number" name="room[{{ ($key+1) }}][no_of_single_beds]" value="{{ $value->no_of_single_beds }}" class="form-control"> 
-                                                            </div> 
-                                                        </div> 
-                                                    </div> 
-                                                    <div class="row"> 
-                                                        <label class="col-sm-2 col-form-label">Select Amenities</label> 
-                                                        <div class="col-md-10" style="margin-top: 15px"> 
+                                                    <div class="row">
+                                                        <label class="col-sm-2 col-form-label">Title</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <input type="text" name="room[{{ ($key+1) }}][title]" class="form-control" value="{{ $value->title }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-2 col-form-label">No of Double Bed</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <input type="number" name="room[{{ ($key+1) }}][no_of_double_bedrooms]" value="{{ $value->no_of_double_bedrooms }}" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-2 col-form-label">No of Single Beds</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <input type="number" name="room[{{ ($key+1) }}][no_of_single_beds]" value="{{ $value->no_of_single_beds }}" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-2 col-form-label">Select Amenities</label>
+                                                        <div class="col-md-10" style="margin-top: 15px">
                                                             <div class="row">
-                                                                <?php 
-                                                                    $array_amenities = json_decode( $property->amenities , true ); 
+                                                                <?php
+                                                                    $array_amenities = json_decode( $property->amenities , true );
                                                                     $selectedAmenities = json_decode($value->amenities , true);
-                                                                ?> 
-                                                                <?php foreach( $amenities as $k => $v ){ ?> 
-                                                                    <div class="col-lg-4 col-md-4 col-sm-3"> 
-                                                                        <div class="form-check"> 
-                                                                            <label class="form-check-label"> 
-                                                                                <input class="form-check-input" type="checkbox" name="room[{{ ($key+1) }}][amenities][]" {{ (in_array($v->id , $selectedAmenities) ? 'checked' : '') }} value="<?php echo $v->id; ?>"> 
-                                                                                <?php echo $v->name; ?> 
-                                                                                <span class="form-check-sign"> 
-                                                                                    <span class="check"></span> 
-                                                                                </span> 
-                                                                            </label> 
-                                                                        </div> 
-                                                                    </div> 
-                                                                <?php } ?> 
-                                                            </div> 
-                                                        </div> 
+                                                                ?>
+                                                                <?php foreach( $amenities as $k => $v ){ ?>
+                                                                    <div class="col-lg-4 col-md-4 col-sm-3">
+                                                                        <div class="form-check">
+                                                                            <label class="form-check-label">
+                                                                                <input class="form-check-input" type="checkbox" name="room[{{ ($key+1) }}][amenities][]" {{ (in_array($v->id , $selectedAmenities) ? 'checked' : '') }} value="<?php echo $v->id; ?>">
+                                                                                <?php echo $v->name; ?>
+                                                                                <span class="form-check-sign">
+                                                                                    <span class="check"></span>
+                                                                                </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php } ?>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                    {{--  <div class="row">
                                                         <label class="col-sm-2 col-form-label">Regular Price</label>
@@ -225,7 +225,7 @@
                                             </div>
                                         </div>
                                     </div> --}}
-                                   
+
 
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">Property Category</label>
@@ -240,7 +240,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">About your property</label>
@@ -272,7 +272,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
                                     <div class="row">
                                         <label class="col-sm-2 col-form-label">Cancellation Policy</label>
@@ -284,7 +284,7 @@
                                             <a href="{{ asset('property/'.$property->id.'/'.$property->cancellation_pdf) }}" download>Old Cancel Policy</a>
                                         </div>
                                     </div>
-                                    
+
 
                                     <div class="row">
                                         <div class="offset-2 col-md-4">
@@ -321,7 +321,7 @@
                                             <input type="number" name="availableRooms" value="{{ $property->availableRooms }}" class="form-control">
                                         </div>
                                     </div> --}}
-                                    
+
 
 
                                     <div class="row">
@@ -440,9 +440,9 @@
                                                     </div>
                                                 </div>
                                             @endforeach
-                                        </div>  
+                                        </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>       
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -451,11 +451,10 @@
             </div>
         </div>
     </div>
-    @section('javascript')
+@section('javascript')
         <script src='https://cdn.ckeditor.com/4.15.0/basic/ckeditor.js'></script>
         <script type='text/javascript'>
             $(document).ready(function () {
-
                 md.initFormExtendedDatetimepickers();
                 if ($('.slider').length != 0) {
                     md.initSliders();
@@ -468,7 +467,9 @@
 
                 $(document).on( 'keyup' , 'input[name=no_of_bedrooms]' , function(){
                     $('.additionalBedroomDetails').html('');
-                    for(let i = 1 ; i <= $(this).val() ; i++){
+                    var loopEnd = $(this).val() - {{ $PropertyRoom->count() }} ;
+                    console.log(loopEnd);
+                    for(let i = 1 ; i <= loopEnd ; i++){
                         let appendedData = $('.appendedData').html();
                         $('.additionalBedroomDetails').append('<div class="card "><div class="card-header card-header-rose card-header-text"><div class="card-text"><h4 class="card-title" style="float: left">Bedroom '+i+' </h4><div class="col-md-3" style="float: right;"><div class="togglebutton"><label><input type="checkbox" name="room['+i+'][room_availability]"><span class="toggle"></span>     </label></div></div></div></div><div class="card-body "><div class="row"> <label class="col-sm-2 col-form-label">Title</label> <div class="col-sm-10"> <div class="form-group"> <input type="text" name="room['+i+'][title]" class="form-control"> </div> </div> </div> <div class="row"> <label class="col-sm-2 col-form-label">No of Double Bed</label> <div class="col-sm-10"> <div class="form-group"> <input type="number" name="room['+i+'][no_of_double_bedrooms]" class="form-control"> </div> </div> </div> <div class="row"> <label class="col-sm-2 col-form-label">No of Single Beds</label> <div class="col-sm-10"> <div class="form-group"> <input type="number" name="room['+i+'][no_of_single_beds]" class="form-control"> </div> </div> </div> <div class="row"> <label class="col-sm-2 col-form-label">Select Amenities</label> <div class="col-md-10" style="margin-top: 15px"> <div class="row"><?php $array_amenities = json_decode( $property->amenities , true ); ?> <?php foreach( $amenities as $k => $v ){ ?> <div class="col-lg-4 col-md-4 col-sm-3"> <div class="form-check"> <label class="form-check-label"> <input class="form-check-input" type="checkbox" name="room['+i+'][amenities][]" value="<?php echo $v->id; ?>"> <?php echo $v->name; ?> <span class="form-check-sign"> <span class="check"></span> </span> </label> </div> </div> <?php } ?> </div> </div> </div> <div class="row"><label class="col-sm-2 col-form-label">About your property</label><div class="col-lg-10 col-md-10 col-sm-3"><textarea class="form-control" name="room['+i+'][room_about_property]" rows="5"></textarea></div></div>  </div></div>');
                     }
@@ -477,6 +478,6 @@
             });
 
         </script>
-    @endsection
+@endsection
 @endsection
 {{-- <div class="row"><label class="col-sm-2 col-form-label">Regular Price</label><div class="col-lg-10 col-md-10 col-sm-3"><input type="text" name="room['+i+'][room_regular_price]" value="" class="form-control" multiple></div></div><div class="row"><label class="col-sm-2 col-form-label">Offer Price</label><div class="col-lg-10 col-md-10 col-sm-3"><input type="text" name="room['+i+'][room_offer_price]" value="" class="form-control" multiple></div></div> --}}

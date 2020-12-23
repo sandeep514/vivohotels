@@ -31,16 +31,16 @@ class PropertyController extends Controller
     }
 
     public function submitProperty(Request $request){
+        dd($request->all());
         $propertyId = $request->id;
         PropertyRoom::where(['product_id' => $propertyId])->delete();
-        
+
         if( $request->has('room') ){
             foreach ($request->room as $key => $value) {
                 $room_availability = 0;
                 if( array_key_exists('room_availability', $request->all()) ){
                     $room_availability = 1;
                 }
-
                 PropertyRoom::create([
                     'product_id'                => $propertyId,
                     'title'                     => $value['title'],
@@ -74,7 +74,7 @@ class PropertyController extends Controller
         }
 
         if( $request->has('availability') ){
-        
+
         }else{
             $request['availability'] = "off";
         }
@@ -107,8 +107,8 @@ class PropertyController extends Controller
             if($request->hasFile('propertyImage')) {
                 $image       = $request->file('propertyImage');
                 $filename    = $image->getClientOriginalName();
-            
-                $image_resize = Image::make($image->getRealPath());              
+
+                $image_resize = Image::make($image->getRealPath());
                 $image_resize->resize(600, 600);
                 $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));
                 Property::where('id' , $propertyId)->update([ 'propertyImage' => $filename ]);
@@ -122,17 +122,17 @@ class PropertyController extends Controller
 
                 Property::where('id' , $propertyId)->update([ 'cancellation_pdf' => $filename ]);
             }
-            
+
             if($request->hasFile('otherImages')) {
                 $otherImg = [];
 
                 foreach( $request->file('otherImages') as $k => $v){
                     $image       = $v;
                     $filename    = $image->getClientOriginalName();
-                
-                    $image_resize = Image::make($image->getRealPath());              
+
+                    $image_resize = Image::make($image->getRealPath());
                     $image_resize->resize(600, 600);
-                    $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));        
+                    $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));
                     $otherImg[] = $filename;
                 }
 
@@ -163,7 +163,7 @@ class PropertyController extends Controller
         $faq = FAQ::with(['getAnswers'])->get();
         $city = City::orderBy('name' , "ASC")->get();
         $PropertyCategory = PropertyCategory::get();
-                    
+
         return view( 'propertyAdmin.property.createProperty' , compact( 'PropertyCategory' , 'amenities' , 'faq' , 'city') );
     }
 
@@ -179,23 +179,23 @@ class PropertyController extends Controller
                 if($request->hasFile('propertyImage')) {
                     $image       = $request->file('propertyImage');
                     $filename    = $image->getClientOriginalName();
-                
-                    $image_resize = Image::make($image->getRealPath());              
+
+                    $image_resize = Image::make($image->getRealPath());
                     $image_resize->resize(600, 600);
                     $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));
                     Property::where('id' , $propertyId)->update([ 'propertyImage' => $filename ]);
                 }
-                
+
                 if($request->hasFile('otherImages')) {
                     $otherImg = [];
 
                     foreach( $request->file('otherImages') as $k => $v){
                         $image       = $v;
                         $filename    = $image->getClientOriginalName();
-                    
-                        $image_resize = Image::make($image->getRealPath());              
+
+                        $image_resize = Image::make($image->getRealPath());
                         $image_resize->resize(600, 600);
-                        $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));        
+                        $image_resize->save(public_path('property/'.$propertyId.'/'.$filename));
                         $otherImg[] = $filename;
                     }
 
@@ -225,6 +225,6 @@ class PropertyController extends Controller
         }
         return back();
     }
-    
-   
+
+
 }
