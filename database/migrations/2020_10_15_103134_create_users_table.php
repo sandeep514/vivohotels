@@ -9,13 +9,14 @@ class CreateUsersTable extends Migration {
 	{
 		Schema::create('user', function(Blueprint $table) {
 			$table->increments('id');
+            $table->string('name', 256);
+            $table->string('email', 256);
+            $table->string('mobile', 100)->nullable();
+            $table->string('password', 256);
+            $table->bigInteger('role_id');
+            $table->integer('status')->default('0')->comment('status 1 for active and 0 for deactivated');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string('name', 256);
-			$table->string('email', 256);
-			$table->string('mobile', 100);
-			$table->string('password', 256);
-			$table->integer('status')->default('1');
 		});
 	}
 

@@ -31,7 +31,7 @@ class PropertyController extends Controller
     }
 
     public function submitProperty(Request $request){
-        dd($request->all());
+//        dd($request->all());
         $propertyId = $request->id;
         PropertyRoom::where(['product_id' => $propertyId])->delete();
 

@@ -20,19 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8549e493-c26b-48f2-807a-208dc9d6c8ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_12_22_20__12_03_PM.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vivohotels.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/property/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/property/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_061434_create_roles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_070146_create_city_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_070713_create_amenities_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_070949_create_admin_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_071944_create_faq_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_072215_create_faq_fill_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/admin/PropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/admin/PropertyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/property/PropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/property/PropertyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/propertyAdmin/property/createProperty.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/propertyAdmin/property/createProperty.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/propertyAdmin/property/editProperty.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/propertyAdmin/property/editProperty.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/propertyAdmin/property/listProperty.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/propertyAdmin/property/listProperty.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_contactus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_contact_us_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_property_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_property_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_15_103134_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +199,7 @@
       <updated>1608617315130</updated>
       <workItem from="1608617322710" duration="4288000" />
       <workItem from="1608714636608" duration="7504000" />
+      <workItem from="1608788276856" duration="12179000" />
     </task>
     <servers />
   </component>
@@ -225,9 +226,13 @@
       <screen x="0" y="30" width="1280" height="770" />
     </state>
     <state x="77" y="68" key="SettingsEditor/0.30.1280.770@0.30.1280.770" timestamp="1608715621564" />
-    <state x="296" y="68" width="672" height="678" key="search.everywhere.popup" timestamp="1608721854938">
+    <state x="0" y="30" width="1253" height="513" key="dock-window-1" timestamp="1608801237323">
       <screen x="0" y="30" width="1280" height="770" />
     </state>
-    <state x="296" y="68" width="672" height="678" key="search.everywhere.popup/0.30.1280.770@0.30.1280.770" timestamp="1608721854938" />
+    <state x="0" y="30" width="1253" height="513" key="dock-window-1/0.30.1280.770@0.30.1280.770" timestamp="1608801237323" />
+    <state x="296" y="68" width="672" height="678" key="search.everywhere.popup" timestamp="1608805769598">
+      <screen x="0" y="30" width="1280" height="770" />
+    </state>
+    <state x="296" y="68" width="672" height="678" key="search.everywhere.popup/0.30.1280.770@0.30.1280.770" timestamp="1608805769598" />
   </component>
 </project>

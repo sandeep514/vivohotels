@@ -12,6 +12,8 @@
     | contains the "web" middleware group. Now create something great!
     |
     */
+
+
     Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('/', ['as' => '/', 'uses' => 'Controller@index']);
         Route::get('about', ['as' => 'about', 'uses' => 'Controller@about']);
@@ -48,6 +50,7 @@
 
             //login super admin
             Route::get('/', ['as' => 'signin', 'uses' => 'MainController@signin']);
+
             Route::POST('loginuser', ['as' => 'login.user', 'uses' => 'AuthControler@loginuser']);
             // Route::group( ['middleware' => 'admin'] , function(){
 

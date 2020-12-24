@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Requests\AddProperty;
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Mail;
 use Session;
@@ -22,8 +23,8 @@ class PropertyController extends Controller
     public function listProperty(){
         $property = Property::get();
         return View('admin.property.listProperty' , compact('property'));
-        
-    }   
+
+    }
     public function create(Request $request)
     {
         $request->validate([
@@ -33,15 +34,17 @@ class PropertyController extends Controller
             'confpassword' => 'required|same:password|min:6',
         ]);
 
-        $createProperty = new Property;
-        $createProperty->title              = $request->title;
+        $createProperty = new User;
+        $createProperty->name              = $request->title;
         $createProperty->email              = $request->email;
         $createProperty->status             = 0;
+        $createProperty->role_id             = 2; // role id 2 is for property
         $createProperty->password           = Hash::make($request->password);
         $createProperty->save();
 
         $link = 'http://vivohotels.webcooks.in/room/details/'.base64_encode($createProperty->id);
-        $data = array(  
+
+        $data = array(
             'name'=>"Stay with vivo",
             'link' => 'http://vivohotels.webcooks.in/property/login',
             'name' => $request->title,
@@ -56,6 +59,7 @@ class PropertyController extends Controller
             $message->from('support@vivohotels.webcooks.in','Stay with vivo');
 
         });
+
         Session::flash('msg' , 'updated');
         return back();
 
@@ -67,23 +71,23 @@ class PropertyController extends Controller
         //     if($request->hasFile('propertyImage')) {
         //         $image       = $request->file('propertyImage');
         //         $filename    = $image->getClientOriginalName();
-            
-        //         $image_resize = Image::make($image->getRealPath());              
+
+        //         $image_resize = Image::make($image->getRealPath());
         //         $image_resize->resize(600, 600);
         //         $image_resize->save(public_path('property/'.$createProperty->id.'/'.$filename));
         //         Property::where('id' , $createProperty->id)->update([ 'propertyImage' => $filename ]);
         //     }
-            
+
         //     if($request->hasFile('otherImages')) {
         //         $otherImg = [];
 
         //         foreach( $request->file('otherImages') as $k => $v){
         //             $image       = $v;
         //             $filename    = $image->getClientOriginalName();
-                
-        //             $image_resize = Image::make($image->getRealPath());              
+
+        //             $image_resize = Image::make($image->getRealPath());
         //             $image_resize->resize(600, 600);
-        //             $image_resize->save(public_path('property/'.$createProperty->id.'/'.$filename));        
+        //             $image_resize->save(public_path('property/'.$createProperty->id.'/'.$filename));
         //             $otherImg[] = $filename;
         //         }
         //         $encodedOtherImages  = json_encode($otherImg);
@@ -92,15 +96,10 @@ class PropertyController extends Controller
         // }
 
         // return back()->withErrors(['success' => " New Property add successfully."]);
-        
 
-
-
-
-
-
-        dd($request->all());
+//        dd($request->all());
     }
+
     public function changeStatus($id){
         $property = Property::whereId($id)->first();
         if( $property != null ){
@@ -110,7 +109,7 @@ class PropertyController extends Controller
                 Property::whereId($id)->update(['status' => 0]);
             }
         }
-        
+
         return back();
     }
 }
