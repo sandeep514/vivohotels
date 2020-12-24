@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration {
             $table->string('mobile', 100)->nullable();
             $table->string('password', 256);
             $table->bigInteger('role_id');
-            $table->integer('status')->default('0')->comment('status 1 for active and 0 for deactivated');
+            $table->integer('status')->default(0)->comment('status 1 for active and 0 for deactivated');
 			$table->timestamps();
 			$table->softDeletes();
 		});
