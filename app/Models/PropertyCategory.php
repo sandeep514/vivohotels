@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PropertyCategory extends Model 
+class PropertyCategory extends Model
 {
 
-    protected $table = 'propertycategory';
+    protected $table = 'property_category';
     public $timestamps = true;
 
     use SoftDeletes;

@@ -7,7 +7,7 @@ class CreatePropertyCategoryTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('propertyCategory', function(Blueprint $table) {
+		Schema::create('property_category', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('title', 256);
 			$table->integer('status')->default('1');

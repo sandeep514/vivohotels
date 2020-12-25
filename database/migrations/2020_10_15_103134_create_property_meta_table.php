@@ -7,7 +7,7 @@ class CreatePropertyMetaTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('propertyMeta', function(Blueprint $table) {
+		Schema::create('property_meta', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
 			$table->softDeletes();

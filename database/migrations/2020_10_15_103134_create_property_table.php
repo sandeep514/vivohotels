@@ -20,7 +20,6 @@
                 $table->integer('min_guests');
                 $table->integer('min_might_stay');
                 $table->string('other_person_price');
-                $table->text('amenities');
                 $table->text('about_property');
                 $table->text('before_buy');
                 $table->text('about_meal');

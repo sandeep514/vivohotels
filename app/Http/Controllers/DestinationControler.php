@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contactus;
+use App\Models\ContactUs;
 use Session;
 use App\Models\Property;
 

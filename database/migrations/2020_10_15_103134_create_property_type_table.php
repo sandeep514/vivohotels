@@ -7,8 +7,8 @@ class CreatePropertyTypeTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('propertyType', function(Blueprint $table) {
-			$table->increments('id');
+		Schema::create('property_type', function(Blueprint $table) {
+			$table->id();
 			$table->string('title', 256);
 			$table->integer('status')->default('1');
 			$table->timestamps();

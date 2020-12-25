@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contactus;
+use App\Models\ContactUs;
 use Session;
 
 class ContactControler extends Controller
@@ -18,7 +18,7 @@ class ContactControler extends Controller
             'message' => 'required'
         ]);
 
-        $contactus = Contactus::create([
+        $contactus = ContactUs::create([
             'name' => $request->name,
             'email' => $request->email,
             'mobile' => $request->mobile,

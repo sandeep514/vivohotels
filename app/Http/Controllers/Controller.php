@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Contactus;
+use App\Models\ContactUs;
 use Session;
 use Validator;
 
@@ -37,11 +37,11 @@ class Controller extends BaseController
         return view('front.contactus');
     }
 
-    
+
 
     public function restaurant()
     {
         return view('front.restaurant');
     }
-    
+
 }

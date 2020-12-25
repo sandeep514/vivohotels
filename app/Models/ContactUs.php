@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Contactus extends Model 
+class ContactUs extends Model
 {
     protected $fillable = [ 'name' , 'email' , 'mobile' , 'message' ];
-    protected $table = 'contactus';
+    protected $table = 'contact_us';
     public $timestamps = true;
     use SoftDeletes;
 
